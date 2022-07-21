@@ -1,0 +1,30 @@
+{% extends 'html/base.html'%} {% load static %} {% block title%} {%endblock %}
+{% block content%}
+<div id="features" class="text-center mt-5">
+  <div class="container">
+    <div class="section-title mb-5">
+      <h2 mt-3>Our Specials</h2>
+    </div>
+
+    <div class="row">
+                  {% for hotel in hotels%}
+
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="features-item">
+
+      {% comment %} <a href=" {% url'detail' hotel.id %} "> {% endcomment %}
+            <img src="{{hotel.image.url}}" height='200px'>
+          <p>{{hotel.description}}</p>
+          <p>{{hotel.id}} </p>
+          {% comment %} </a> {% endcomment %}
+
+
+        </div>
+      </div>
+{% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock%}
